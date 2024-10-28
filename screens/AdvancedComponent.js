@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, Switch } from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  FlatList,
+  Switch,
+} from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { globalStyles } from '../globalStyles';
 
@@ -20,7 +27,14 @@ export default function AdvancedComponent() {
     const monthly = parseFloat(monthlyContribution) || 0;
     const period = parseInt(investmentPeriod) || 0;
     const rate = parseFloat(interestRate) / 100;
-    const n = compoundFrequency === 'Annually' ? 1 : compoundFrequency === 'Semi-Annually' ? 2 : compoundFrequency === 'Quarterly' ? 4 : 12;
+    const n =
+      compoundFrequency === 'Annually'
+        ? 1
+        : compoundFrequency === 'Semi-Annually'
+          ? 2
+          : compoundFrequency === 'Quarterly'
+            ? 4
+            : 12;
     const isMonths = !isYears;
     const time = isMonths ? period / 12 : period;
     const effectiveRate = isYearlyRate ? rate : rate / 12;
@@ -31,10 +45,10 @@ export default function AdvancedComponent() {
     const resultsArray = [];
 
     for (let i = 1; i <= compoundTimes; i++) {
-      const profit = totalAmount * effectiveRate / n;
+      const profit = (totalAmount * effectiveRate) / n;
       cumulativeProfit += profit;
       totalAmount += profit + (i > 1 ? monthly : 0);
-      
+
       resultsArray.push({
         id: i.toString(),
         year: isMonths ? Math.floor(i / 12) : i,
@@ -65,7 +79,9 @@ export default function AdvancedComponent() {
 
       <View style={globalStyles.inputContainer}>
         <Text style={globalStyles.label}>Monthly Contribution (₹)</Text>
-        <Text style={globalStyles.subLabel}>* added to the principal from the second month.</Text>
+        <Text style={globalStyles.subLabel}>
+          * added to the principal from the second month.
+        </Text>
         <TextInput
           style={globalStyles.input}
           keyboardType="numeric"
@@ -93,7 +109,10 @@ export default function AdvancedComponent() {
         <Text style={globalStyles.label}>Interest Rate</Text>
         <View style={globalStyles.switchContainer}>
           <Text style={globalStyles.switchLabel}>Yearly</Text>
-          <Switch value={isYearlyRate} onValueChange={() => setIsYearlyRate(!isYearlyRate)} />
+          <Switch
+            value={isYearlyRate}
+            onValueChange={() => setIsYearlyRate(!isYearlyRate)}
+          />
           <Text style={globalStyles.switchLabel}>Monthly</Text>
         </View>
         <TextInput
@@ -140,8 +159,12 @@ export default function AdvancedComponent() {
           <View style={globalStyles.resultRow}>
             <Text style={globalStyles.cell}>{item.year}</Text>
             <Text style={globalStyles.cell}>{item.principal} ₹</Text>
-            <Text style={[globalStyles.cell, { color: colors.resultPositive }]}>{item.profit} ₹</Text>
-            <Text style={[globalStyles.cell, { color: colors.resultNegative }]}>{item.total} ₹</Text>
+            <Text style={[globalStyles.cell, { color: colors.resultPositive }]}>
+              {item.profit} ₹
+            </Text>
+            <Text style={[globalStyles.cell, { color: colors.resultNegative }]}>
+              {item.total} ₹
+            </Text>
           </View>
         )}
       />
