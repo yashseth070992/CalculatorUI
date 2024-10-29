@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { globalStyles } from '../globalStyles';
+import { colors } from '../colors';
 
 export default function AdvancedComponent() {
   const [initialInvestment, setInitialInvestment] = useState('');
@@ -94,9 +95,19 @@ export default function AdvancedComponent() {
         <Text style={globalStyles.label}>Investment Period</Text>
         <View style={globalStyles.switchContainer}>
           <Text style={globalStyles.switchLabel}>Years</Text>
-          <Switch value={isYears} onValueChange={() => setIsYears(!isYears)} />
+          <Switch
+            value={isYears}
+            onValueChange={() => setIsYears(!isYears)}
+            thumbColor={isYears ? colors.accentPrimary : colors.borderLight}
+            trackColor={{
+              false: colors.borderLight,
+              true: colors.accentSecondary,
+            }}
+            style={globalStyles.toggleSwitch}
+          />
           <Text style={globalStyles.switchLabel}>Months</Text>
         </View>
+
         <TextInput
           style={globalStyles.input}
           keyboardType="numeric"
@@ -111,6 +122,14 @@ export default function AdvancedComponent() {
           <Text style={globalStyles.switchLabel}>Yearly</Text>
           <Switch
             value={isYearlyRate}
+            thumbColor={
+              isYearlyRate ? colors.accentPrimary : colors.borderLight
+            }
+            trackColor={{
+              false: colors.borderLight,
+              true: colors.accentSecondary,
+            }}
+            style={globalStyles.toggleSwitch}
             onValueChange={() => setIsYearlyRate(!isYearlyRate)}
           />
           <Text style={globalStyles.switchLabel}>Monthly</Text>

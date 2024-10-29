@@ -77,4 +77,20 @@ export const globalStyles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
+  switchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 5,
+    marginBottom: 10,
+  },
+  switchLabel: {
+    color: colors.textAccent,
+    fontSize: 14,
+    marginHorizontal: 8,
+  },
+  toggleSwitch: {
+    transform: [{ scaleX: 1.1 }, { scaleY: 1.1 }], // Adjust the size of the toggle switch if desired
+    thumbColor: colors.accentPrimary, // Color of the thumb (circle) of the switch
+    trackColor: { true: colors.accentSecondary, false: colors.borderLight }, // Color of the track based on the switch state
+  },
 });

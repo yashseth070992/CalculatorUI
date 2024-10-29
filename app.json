@@ -2,6 +2,14 @@
   "expo": {
     "name": "calculator_ui",
     "slug": "calculator_ui",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "extra": {
+      "eas": {
+        "projectId": "08c2f113-4706-4a89-af05-270fad0e6e82"
+      }
+    },
+    "android": {
+      "package": "com.yashseth07.calculator_ui"
+    }
   }
 }
