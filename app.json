@@ -11,6 +11,9 @@
     "android": {
       "package": "com.yashseth07.calculator_ui",
       "jsEngine": "hermes"
+    },
+    "splash": {
+      "backgroundColor": "#FFFFFF"
     }
   }
 }
