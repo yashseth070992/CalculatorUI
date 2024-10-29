@@ -26,4 +26,8 @@ export const colors = {
   // Result Colors
   resultPositive: '#c69341', // Gold color for positive values
   resultNegative: '#e57373', // Soft red for negative results
+
+  // Selected Item Colors
+  selectedBackground: '#d9b06c', // Light gold background for selected item
+  selectedText: '#ffffff', // White text for selected item
 };

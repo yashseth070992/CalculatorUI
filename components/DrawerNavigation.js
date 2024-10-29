@@ -1,4 +1,3 @@
-// DrawerNavigation.js
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { TouchableOpacity } from 'react-native';
@@ -16,6 +15,9 @@ export default function DrawerNavigation() {
         drawerStyle: {
           backgroundColor: colors.backgroundPrimary,
         },
+        drawerActiveBackgroundColor: colors.selectedBackground,
+        drawerActiveTintColor: colors.selectedText,
+        drawerInactiveTintColor: colors.textSecondary,
         headerLeft: () => (
           <TouchableOpacity
             onPress={() => navigation.toggleDrawer()}
