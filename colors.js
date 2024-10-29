@@ -24,7 +24,7 @@ export const colors = {
   iconSecondary: '#d9b06c', // Light gold for secondary icons
 
   // Result Colors
-  resultPositive: '#c69341', // Gold color for positive values
+  resultPositive: '#81C784', // Subtle green color for positive values
   resultNegative: '#e57373', // Soft red for negative results
 
   // Selected Item Colors
