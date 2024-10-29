@@ -9,7 +9,8 @@
       }
     },
     "android": {
-      "package": "com.yashseth07.calculator_ui"
+      "package": "com.yashseth07.calculator_ui",
+      "jsEngine": "hermes"
     }
   }
 }
