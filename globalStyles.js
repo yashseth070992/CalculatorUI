@@ -32,6 +32,15 @@ export const globalStyles = StyleSheet.create({
     color: colors.textPrimary,
     backgroundColor: colors.backgroundSecondary,
   },
+  pickerContainer: {
+    height: 40,
+    borderColor: colors.borderLight,
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    color: colors.textPrimary,
+    backgroundColor: colors.backgroundSecondary,
+  },
   resultHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
