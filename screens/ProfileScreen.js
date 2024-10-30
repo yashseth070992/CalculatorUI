@@ -6,7 +6,7 @@ export default function ProfileScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text style={{ color: colors.textPrimary, fontSize: 18 }}>
-      ProfileScreen Page
+        ProfileScreen Page
       </Text>
     </View>
   );

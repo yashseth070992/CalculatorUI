@@ -5,7 +5,6 @@ import { globalStyles } from '../globalStyles';
 
 const HeaderSection = ({ title, totalProfit, finalValue, onCalculate }) => (
   <View style={globalStyles.container}>
-    <Text style={globalStyles.title}>{title}</Text>
     <TouchableOpacity style={globalStyles.button} onPress={onCalculate}>
       <Text style={globalStyles.buttonText}>Calculate</Text>
     </TouchableOpacity>

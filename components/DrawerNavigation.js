@@ -9,7 +9,6 @@ import FinancialGoalsScreen from '../screens/FinancialGoalsScreen';
 import AboutUsScreen from '../screens/AboutUsScreen';
 import FeedbackScreen from '../screens/FeedbackScreen';
 import ProfileScreen from '../screens/ProfileScreen';
-import CurrencyConverterScreen from '../screens/CurrencyConverterScreen';
 import TaxCalculatorScreen from '../screens/TaxCalculatorScreen';
 import EducationalResourcesScreen from '../screens/EducationalResourcesScreen';
 
@@ -51,17 +50,97 @@ export default function DrawerNavigation() {
         },
       })}
     >
-      <Drawer.Screen name="Home" component={TabNavigator} options={{ title: 'Calculator' }} />
-      {/* <Drawer.Screen name="Dashboard" component={DashboardScreen} /> */}
-      <Drawer.Screen name="Investment Calculators" component={TabNavigator} options={{ title: 'Investment Calculators' }} />
-      <Drawer.Screen name="Debt Management" component={DebtManagementScreen} />
-      <Drawer.Screen name="Financial Goals" component={FinancialGoalsScreen} />
-      <Drawer.Screen name="Profile" component={ProfileScreen} />
-      <Drawer.Screen name="Currency Converter" component={CurrencyConverterScreen} />
-      <Drawer.Screen name="Tax Calculator" component={TaxCalculatorScreen} />
-      <Drawer.Screen name="Educational Resources" component={EducationalResourcesScreen} />
-      <Drawer.Screen name="About Us" component={AboutUsScreen} />
-      <Drawer.Screen name="Feedback" component={FeedbackScreen} />
+      <Drawer.Screen
+        name="Home"
+        component={TabNavigator}
+        options={{
+          title: 'Compound Interest Calculator',
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="calculator-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Investment Calculators"
+        component={TabNavigator}
+        options={{
+          title: 'Investment Calculators',
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="stats-chart-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Debt Management"
+        component={DebtManagementScreen}
+        options={{
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="card-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Financial Goals"
+        component={FinancialGoalsScreen}
+        options={{
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="trophy-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="person-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Tax Calculator"
+        component={TaxCalculatorScreen}
+        options={{
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="receipt-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Educational Resources"
+        component={EducationalResourcesScreen}
+        options={{
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="school-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="About Us"
+        component={AboutUsScreen}
+        options={{
+          drawerIcon: ({ color, size }) => (
+            <Ionicons
+              name="information-circle-outline"
+              size={size}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Feedback"
+        component={FeedbackScreen}
+        options={{
+          drawerIcon: ({ color, size }) => (
+            <Ionicons
+              name="chatbox-ellipses-outline"
+              size={size}
+              color={color}
+            />
+          ),
+        }}
+      />
     </Drawer.Navigator>
   );
 }
