@@ -4,7 +4,14 @@ import { TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../colors';
 import TabNavigator from './TabNavigator';
-import SettingsScreen from '../screens/SettingsScreen';
+import DebtManagementScreen from '../screens/DebtManagementScreen';
+import FinancialGoalsScreen from '../screens/FinancialGoalsScreen';
+import AboutUsScreen from '../screens/AboutUsScreen';
+import FeedbackScreen from '../screens/FeedbackScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+import CurrencyConverterScreen from '../screens/CurrencyConverterScreen';
+import TaxCalculatorScreen from '../screens/TaxCalculatorScreen';
+import EducationalResourcesScreen from '../screens/EducationalResourcesScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -44,12 +51,17 @@ export default function DrawerNavigation() {
         },
       })}
     >
-      <Drawer.Screen
-        name="Home"
-        component={TabNavigator}
-        options={{ title: 'Calculator' }}
-      />
-      <Drawer.Screen name="Settings" component={SettingsScreen} />
+      <Drawer.Screen name="Home" component={TabNavigator} options={{ title: 'Calculator' }} />
+      {/* <Drawer.Screen name="Dashboard" component={DashboardScreen} /> */}
+      <Drawer.Screen name="Investment Calculators" component={TabNavigator} options={{ title: 'Investment Calculators' }} />
+      <Drawer.Screen name="Debt Management" component={DebtManagementScreen} />
+      <Drawer.Screen name="Financial Goals" component={FinancialGoalsScreen} />
+      <Drawer.Screen name="Profile" component={ProfileScreen} />
+      <Drawer.Screen name="Currency Converter" component={CurrencyConverterScreen} />
+      <Drawer.Screen name="Tax Calculator" component={TaxCalculatorScreen} />
+      <Drawer.Screen name="Educational Resources" component={EducationalResourcesScreen} />
+      <Drawer.Screen name="About Us" component={AboutUsScreen} />
+      <Drawer.Screen name="Feedback" component={FeedbackScreen} />
     </Drawer.Navigator>
   );
 }
