@@ -12,6 +12,7 @@ import ProfileScreen from '../screens/ProfileScreen';
 import TaxCalculatorScreen from '../screens/TaxCalculatorScreen';
 import EducationalResourcesScreen from '../screens/EducationalResourcesScreen';
 import Dashboard from '../screens/dashboard/Dashboard';
+import ExpenseStackNavigator from './ExpenseStackNavigator'; // Updated import
 
 const Drawer = createDrawerNavigator();
 
@@ -56,6 +57,16 @@ export default function DrawerNavigation() {
         component={Dashboard}
         options={{
           title: 'Dashboard',
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="calculator-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Expense"
+        component={ExpenseStackNavigator} // Updated component
+        options={{
+          title: 'Expense Manager',
           drawerIcon: ({ color, size }) => (
             <Ionicons name="calculator-outline" size={size} color={color} />
           ),
