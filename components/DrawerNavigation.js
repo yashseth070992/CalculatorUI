@@ -11,6 +11,7 @@ import FeedbackScreen from '../screens/FeedbackScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import TaxCalculatorScreen from '../screens/TaxCalculatorScreen';
 import EducationalResourcesScreen from '../screens/EducationalResourcesScreen';
+import Dashboard from '../screens/dashboard/Dashboard';
 
 const Drawer = createDrawerNavigator();
 
@@ -52,9 +53,9 @@ export default function DrawerNavigation() {
     >
       <Drawer.Screen
         name="Home"
-        component={TabNavigator}
+        component={Dashboard}
         options={{
-          title: 'Compound Interest Calculator',
+          title: 'Dashboard',
           drawerIcon: ({ color, size }) => (
             <Ionicons name="calculator-outline" size={size} color={color} />
           ),
